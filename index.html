@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amjad Altakrouri — Technology Business Partner</title>
+<meta name="description" content="Amjad Altakrouri — Technology Business Partner, Product Owner & Business Analyst. 9+ years connecting enterprise strategy to shipped technology: IoT, connected cars, and enterprise platforms at STC and Red Sea Global (PIF)." />
+<meta property="og:title" content="Amjad Altakrouri — Technology Business Partner" />
+<meta property="og:description" content="Connecting enterprise strategy to shipped technology — IoT, connected cars, and enterprise platforms." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070C11'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='34' fill='%233BD4BE'%3EA%3C/text%3E%3C/svg%3E" />
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#060B10;
+    --bg-2:#0B131B;
+    --surface:#101A24;
+    --line:#1B2836;
+    --text:#E9EFF4;
+    --muted:#8FA0AF;
+    --teal:#3BD4BE;
+    --teal-dim:rgba(59,212,190,.12);
+    --coral:#FF6F61;
+    --display:'Chakra Petch',sans-serif;
+    --body:'IBM Plex Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--teal);color:#04110E;}
+  a{color:var(--teal);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;scroll-margin-top:88px;}
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--teal);
+    display:flex;align-items:center;gap:12px;margin-bottom:20px;
+  }
+  .eyebrow::after{content:'';height:1px;flex:0 0 56px;background:var(--line);}
+  h2{
+    font-family:var(--display);
+    font-size:clamp(1.6rem,3.4vw,2.3rem);
+    font-weight:600;letter-spacing:.01em;
+    text-transform:uppercase;margin-bottom:28px;
+  }
+
+  /* ---------- Boot sequence ---------- */
+  #boot{
+    display:none;position:fixed;inset:0;z-index:100;
+    background:var(--bg);
+    align-items:center;justify-content:center;
+    transition:opacity .45s ease;cursor:pointer;
+  }
+  .js #boot{display:flex;}
+  #boot.done{opacity:0;pointer-events:none;}
+  #boot pre{
+    font-family:var(--mono);font-size:clamp(12px,2.6vw,14px);
+    color:var(--teal);line-height:1.9;white-space:pre-wrap;
+    min-width:min(560px,86vw);
+  }
+  #boot .skip{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    color:var(--muted);text-transform:uppercase;
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(6,11,16,.72);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:0 24px;
+    height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{
+    font-family:var(--mono);font-size:14px;color:var(--text);letter-spacing:.04em;white-space:nowrap;
+  }
+  .brand b{color:var(--teal);font-weight:500;}
+  .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
+  .nav-links a{color:var(--muted);font-size:14px;font-weight:500;}
+  .nav-links a:hover{color:var(--text);text-decoration:none;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--display);font-weight:600;font-size:13.5px;
+    letter-spacing:.06em;text-transform:uppercase;
+    padding:11px 20px;border-radius:6px;border:1px solid var(--teal);
+    color:var(--teal);background:transparent;cursor:pointer;
+    transition:background .2s,color .2s,transform .2s,box-shadow .2s;
+    white-space:nowrap;
+  }
+  .btn:hover{background:var(--teal);color:#04110E;text-decoration:none;transform:translateY(-1px);box-shadow:0 0 24px rgba(59,212,190,.25);}
+  .btn-solid{background:var(--teal);color:#04110E;}
+  .btn-solid:hover{background:#5AE4D0;border-color:#5AE4D0;}
+  .menu-btn{
+    display:none;background:none;border:1px solid var(--line);border-radius:8px;
+    width:40px;height:40px;cursor:pointer;color:var(--text);font-size:18px;line-height:1;
+  }
+  @media(max-width:820px){
+    .nav-links{
+      display:none;position:absolute;top:64px;left:0;right:0;
+      flex-direction:column;align-items:flex-start;gap:0;
+      background:var(--bg-2);border-bottom:1px solid var(--line);
+      padding:8px 24px 16px;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links li{width:100%;}
+    .nav-links a{display:block;padding:12px 0;font-size:15px;}
+    .menu-btn{display:block;}
+    .nav-cv{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;min-height:100svh;
+    display:flex;align-items:center;
+    overflow:hidden;padding:130px 0 90px;
+  }
+  #net{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
+  .hero::before{ /* scanlines */
+    content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(233,239,244,.014) 0 1px,transparent 1px 3px);
+  }
+  .hero::after{ /* vignette */
+    content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(ellipse at 30% 40%,transparent 0%,rgba(6,11,16,.5) 68%,var(--bg) 100%);
+  }
+  .hero .wrap{position:relative;z-index:2;width:100%;}
+  .hero-tag{
+    font-family:var(--mono);font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:20px;
+  }
+  .hero-tag .ok{color:var(--teal);}
+  .hero h1{
+    font-family:var(--display);
+    font-size:clamp(2.4rem,8vw,4.8rem);
+    font-weight:700;letter-spacing:.01em;line-height:1.04;
+    text-transform:uppercase;margin-bottom:10px;
+    position:relative;display:inline-block;
+  }
+  .glitch::before,.glitch::after{
+    content:attr(data-text);position:absolute;inset:0;
+    opacity:0;pointer-events:none;
+  }
+  .glitch::before{color:var(--teal);z-index:-1;}
+  .glitch::after{color:var(--coral);z-index:-2;}
+  .glitch.on::before{opacity:.8;animation:gl1 .5s steps(2) 2;}
+  .glitch.on::after{opacity:.8;animation:gl2 .5s steps(2) 2;}
+  .glitch:hover::before{opacity:.8;animation:gl1 .4s steps(2) infinite;}
+  .glitch:hover::after{opacity:.8;animation:gl2 .4s steps(2) infinite;}
+  @keyframes gl1{0%{transform:translate(0)}25%{transform:translate(-3px,2px)}50%{transform:translate(2px,-1px)}75%{transform:translate(-1px,-2px)}100%{transform:translate(0)}}
+  @keyframes gl2{0%{transform:translate(0)}25%{transform:translate(3px,-2px)}50%{transform:translate(-2px,1px)}75%{transform:translate(1px,2px)}100%{transform:translate(0)}}
+  .typed-line{
+    font-family:var(--mono);font-size:clamp(14px,2.6vw,17px);
+    color:var(--teal);letter-spacing:.1em;text-transform:uppercase;
+    margin-bottom:22px;min-height:1.7em;
+  }
+  .caret{display:inline-block;width:.55em;background:var(--teal);height:1.05em;vertical-align:-2px;margin-left:3px;animation:blink 1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0}}
+  .hero-lede{
+    font-size:clamp(1.02rem,2.2vw,1.25rem);
+    color:var(--muted);max-width:640px;margin-bottom:34px;
+  }
+  .hero-lede strong{color:var(--text);font-weight:600;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+
+  .telemetry{
+    display:inline-flex;flex-wrap:wrap;gap:0;
+    border:1px solid var(--line);border-radius:8px;
+    background:rgba(11,19,27,.6);overflow:hidden;
+  }
+  .tele{
+    display:flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);
+    padding:10px 16px;border-left:1px solid var(--line);
+  }
+  .tele:first-child{border-left:none;}
+  .tele b{color:var(--text);font-weight:500;}
+  .status-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulseDot 2.2s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(59,212,190,.5)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(59,212,190,0)}}
+  .sig{display:inline-flex;align-items:flex-end;gap:2px;height:12px;}
+  .sig i{width:3px;background:var(--teal);display:block;animation:sig 1.6s ease-in-out infinite;}
+  .sig i:nth-child(1){height:4px;animation-delay:0s;}
+  .sig i:nth-child(2){height:7px;animation-delay:.2s;}
+  .sig i:nth-child(3){height:9px;animation-delay:.4s;}
+  .sig i:nth-child(4){height:12px;animation-delay:.6s;}
+  @keyframes sig{0%,100%{opacity:.35}50%{opacity:1}}
+
+  .hero-coords{
+    position:absolute;bottom:26px;left:24px;z-index:2;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    color:var(--muted);text-transform:uppercase;
+  }
+
+  /* ---------- Stats ---------- */
+  .stats{border-top:1px solid var(--line);background:var(--bg-2);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+  .stat{padding:36px 20px;text-align:center;border-left:1px solid var(--line);}
+  .stat:first-child{border-left:none;}
+  .stat-num{
+    font-family:var(--display);font-size:clamp(1.9rem,4vw,2.6rem);
+    font-weight:700;color:var(--teal);line-height:1.1;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat-label{
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);margin-top:8px;
+  }
+  @media(max-width:680px){
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(3){border-left:none;}
+    .stat:nth-child(n+3){border-top:1px solid var(--line);}
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    overflow:hidden;background:var(--bg);position:relative;
+  }
+  .ticker-track{
+    display:flex;width:max-content;
+    animation:scroll 26s linear infinite;
+  }
+  .ticker:hover .ticker-track{animation-play-state:paused;}
+  .ticker span{
+    font-family:var(--display);font-size:14px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+    padding:16px 0 16px 34px;white-space:nowrap;
+  }
+  .ticker span i{font-style:normal;color:var(--teal);padding-right:34px;}
+  .ticker span.lead{color:var(--coral);}
+  @keyframes scroll{to{transform:translateX(-50%);}}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start;}
+  .about-text p{color:var(--muted);margin-bottom:18px;font-size:1.05rem;}
+  .about-text p strong{color:var(--text);font-weight:600;}
+  .hud{position:relative;}
+  .hud::before,.hud::after{
+    content:'';position:absolute;width:18px;height:18px;pointer-events:none;
+    border-color:rgba(59,212,190,.55);border-style:solid;
+  }
+  .hud::before{top:-1px;left:-1px;border-width:2px 0 0 2px;border-radius:4px 0 0 0;}
+  .hud::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;border-radius:0 0 4px 0;}
+  .facts{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;
+  }
+  .facts-title{
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:10px;
+  }
+  .fact{
+    display:flex;justify-content:space-between;gap:14px;
+    padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;
+  }
+  .fact:last-child{border-bottom:none;padding-bottom:0;}
+  .fact-k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .fact-v{color:var(--text);text-align:right;font-weight:500;}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:36px;}}
+
+  /* ---------- Experience ---------- */
+  .xp{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .timeline{position:relative;margin-top:12px;padding-left:36px;}
+  .timeline::before{
+    content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line);
+  }
+  .packet{
+    position:absolute;left:6px;width:8px;height:8px;border-radius:50%;
+    background:var(--teal);box-shadow:0 0 10px var(--teal);
+    animation:travel 10s linear infinite;
+  }
+  .packet.p2{animation-delay:3.3s;background:var(--coral);box-shadow:0 0 10px var(--coral);}
+  .packet.p3{animation-delay:6.6s;}
+  @keyframes travel{from{top:0;opacity:0}6%{opacity:1}94%{opacity:1}to{top:calc(100% - 8px);opacity:0}}
+  .job{position:relative;padding:0 0 46px;}
+  .job:last-child{padding-bottom:6px;}
+  .job::before{
+    content:'';position:absolute;left:-32px;top:9px;
+    width:10px;height:10px;border-radius:50%;
+    background:var(--bg-2);border:2px solid var(--teal);
+  }
+  .job.current::before{background:var(--teal);}
+  .job.current .ping{
+    position:absolute;left:-32px;top:9px;width:10px;height:10px;border-radius:50%;
+    border:2px solid var(--teal);box-sizing:content-box;margin:-2px;
+    animation:ping 2.4s ease-out infinite;
+  }
+  @keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(3.2);opacity:0}}
+  .sta{
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:6px;
+  }
+  .sta em{font-style:normal;color:var(--muted);}
+  .job-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;margin-bottom:4px;}
+  .job-title{font-family:var(--display);font-size:1.15rem;font-weight:600;letter-spacing:.02em;}
+  .job-dates{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;}
+  .job-co{font-size:14.5px;color:var(--teal);font-weight:600;margin-bottom:12px;}
+  .job-co span{color:var(--muted);font-weight:400;}
+  .job ul{list-style:none;}
+  .job li{
+    color:var(--muted);font-size:15px;margin-bottom:9px;
+    padding-left:18px;position:relative;
+  }
+  .job li::before{content:'▹';position:absolute;left:0;color:var(--teal);font-size:13px;top:1px;}
+  .badge{
+    display:inline-block;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.12em;text-transform:uppercase;
+    color:var(--coral);border:1px solid rgba(255,111,97,.4);
+    border-radius:999px;padding:2px 10px;vertical-align:2px;
+  }
+
+  /* ---------- Skills ---------- */
+  .skill-group{margin-bottom:34px;}
+  .skill-group h3{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--text);margin-bottom:14px;font-weight:500;
+  }
+  .skill-group h3 i{font-style:normal;color:var(--teal);}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    font-size:13.5px;color:var(--muted);
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 15px;transition:border-color .2s,color .2s,box-shadow .2s;
+  }
+  .chip:hover{border-color:var(--teal);color:var(--text);box-shadow:0 0 14px rgba(59,212,190,.15);}
+
+  /* ---------- Credentials ---------- */
+  .creds{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .cred{
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:22px;transition:border-color .2s,transform .2s;
+  }
+  .cred:hover{border-color:var(--teal);transform:translateY(-3px);}
+  .cred-issuer{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
+  .cred-name{font-weight:600;font-size:15.5px;line-height:1.4;}
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px;}
+  .edu{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--surface);}
+  .edu-deg{font-family:var(--display);font-weight:600;font-size:1.02rem;margin-bottom:4px;}
+  .edu-school{color:var(--muted);font-size:14px;}
+  .edu-year{font-family:var(--mono);font-size:12px;color:var(--teal);margin-top:10px;}
+  @media(max-width:680px){.edu-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Contact ---------- */
+  .contact{text-align:center;padding:130px 0;position:relative;overflow:hidden;}
+  .contact .eyebrow{justify-content:center;}
+  .contact .eyebrow::after{display:none;}
+  .contact h2{font-size:clamp(1.9rem,5.5vw,3.1rem);margin-bottom:16px;}
+  .contact p{color:var(--muted);max-width:520px;margin:0 auto 40px;font-size:1.05rem;}
+  .contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .contact .ring{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    border:1px solid rgba(59,212,190,.07);border-radius:50%;pointer-events:none;
+  }
+  .contact .r1{width:420px;height:420px;}
+  .contact .r2{width:640px;height:640px;}
+  .contact .r3{width:880px;height:880px;}
+  .contact .wrap{position:relative;z-index:1;}
+
+  footer{
+    border-top:1px solid var(--line);padding:28px 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+    max-width:1080px;margin:0 auto;
+  }
+  footer,footer a{font-family:var(--mono);font-size:12px;color:var(--muted);}
+  footer a:hover{color:var(--teal);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .packet,.ping,.status-dot,.sig i,.caret,.ticker-track{animation:none;}
+    .glitch.on::before,.glitch.on::after,.glitch:hover::before,.glitch:hover::after{animation:none;opacity:0;}
+    .btn:hover,.cred:hover{transform:none;}
+    #boot{display:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<div id="boot" role="presentation" aria-hidden="true">
+  <pre id="bootText"></pre>
+  <span class="skip">Tap to skip</span>
+</div>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="brand" href="#top">amjad<b>@</b>altakrouri<b>:~$</b></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a class="btn nav-cv" href="Amjad_AlTakrouri_CV_2026.pdf" download>Download CV</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="hero-tag">SYS://IDENTITY <span class="ok">· VERIFIED ✓</span></p>
+    <h1 class="glitch" id="heroName" data-text="AMJAD ALTAKROURI">AMJAD ALTAKROURI</h1>
+    <p class="typed-line"><span id="typed">TECHNOLOGY BUSINESS PARTNER</span><span class="caret" aria-hidden="true"></span></p>
+    <p class="hero-lede">9+ years connecting <strong>enterprise strategy</strong> to <strong>shipped technology</strong> — IoT platforms, connected cars, and enterprise systems across Saudi Arabia's flagship programs at <strong>STC</strong> and <strong>Red Sea Global (PIF)</strong>.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#contact">Establish contact</a>
+      <a class="btn" href="Amjad_AlTakrouri_CV_2026.pdf" download>Download CV</a>
+    </div>
+    <div class="telemetry" role="presentation">
+      <span class="tele"><span class="status-dot"></span> <b>Online</b></span>
+      <span class="tele">SIG <span class="sig"><i></i><i></i><i></i><i></i></span></span>
+      <span class="tele">Uptime <b>9Y+</b></span>
+      <span class="tele">Node <b>RUH · KSA</b></span>
+      <span class="tele">Links <b>1M+ SIMs</b></span>
+    </div>
+  </div>
+  <p class="hero-coords">24.71°N 46.67°E · RIYADH · OPEN TO CONNECT</p>
+</header>
+
+<div class="stats">
+  <div class="stats-grid wrap" style="padding:0;">
+    <div class="stat reveal"><div class="stat-num"><span class="count" data-target="9">0</span>+</div><div class="stat-label">Years of experience</div></div>
+    <div class="stat reveal"><div class="stat-num"><span class="count" data-target="1">0</span>M+</div><div class="stat-label">IoT SIMs enabled</div></div>
+    <div class="stat reveal"><div class="stat-num"><span class="count" data-target="120">0</span>+</div><div class="stat-label">Enterprise initiatives</div></div>
+    <div class="stat reveal"><div class="stat-num"><span class="count" data-target="10">0</span>+</div><div class="stat-label">Global OEMs onboarded</div></div>
+  </div>
+</div>
+
+<div class="ticker" aria-label="Global carmakers onboarded">
+  <div class="ticker-track">
+    <span class="lead">ONBOARDED&nbsp;&nbsp;//</span>
+    <span>LUCID <i>✦</i></span><span>GENERAL MOTORS <i>✦</i></span><span>VOLKSWAGEN <i>✦</i></span><span>BMW <i>✦</i></span><span>CATERPILLAR <i>✦</i></span><span>CHERY <i>✦</i></span>
+    <span class="lead">ONBOARDED&nbsp;&nbsp;//</span>
+    <span>LUCID <i>✦</i></span><span>GENERAL MOTORS <i>✦</i></span><span>VOLKSWAGEN <i>✦</i></span><span>BMW <i>✦</i></span><span>CATERPILLAR <i>✦</i></span><span>CHERY <i>✦</i></span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow reveal">SYS://Profile</p>
+    <h2 class="reveal">Where strategy meets delivery</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a <strong>Technology Business Partner, Product Owner, and Business Analyst</strong> with 9+ years of experience translating enterprise strategy into scalable digital products — combining <strong>TOGAF-aligned architecture</strong> with <strong>PSPO-certified Agile delivery</strong>.</p>
+        <p>At <strong>STC</strong>, I owned the business side of the IoT/M2M and Connected Cars product lines, onboarding global carmakers like Lucid, GM, BMW, and VW onto a platform serving over a million SIMs. Today at <strong>Red Sea Global (PIF)</strong>, I'm the single technology point of contact for business leaders across one of Saudi Arabia's flagship giga-projects.</p>
+        <p>My sweet spot: taking a rough business problem, shaping it into vendor-ready scope, and steering it through architecture, delivery, and UAT until it's live — on budget and on time.</p>
+      </div>
+      <aside class="facts hud reveal" aria-label="Quick facts">
+        <p class="facts-title">// Node info</p>
+        <div class="fact"><span class="fact-k">Location</span><span class="fact-v">Riyadh, Saudi Arabia</span></div>
+        <div class="fact"><span class="fact-k">Current</span><span class="fact-v">Red Sea Global (PIF)</span></div>
+        <div class="fact"><span class="fact-k">Focus</span><span class="fact-v">IoT · Connected Cars · Enterprise</span></div>
+        <div class="fact"><span class="fact-k">Frameworks</span><span class="fact-v">TOGAF 9.2 · Scrum</span></div>
+        <div class="fact"><span class="fact-k">Education</span><span class="fact-v">MSc Software Engineering, UK</span></div>
+        <div class="fact"><span class="fact-k">Languages</span><span class="fact-v">Arabic · English</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="xp">
+  <div class="wrap">
+    <p class="eyebrow reveal">SYS://Experience.log</p>
+    <h2 class="reveal">Career route</h2>
+    <div class="timeline">
+      <span class="packet" aria-hidden="true"></span>
+      <span class="packet p2" aria-hidden="true"></span>
+      <span class="packet p3" aria-hidden="true"></span>
+
+      <article class="job current reveal">
+        <span class="ping" aria-hidden="true"></span>
+        <p class="sta">[STA·06] <em>Riyadh — transmitting</em></p>
+        <div class="job-head">
+          <h3 class="job-title">Technology Business Partner <span class="badge">Current</span></h3>
+          <span class="job-dates">Feb 2024 — Present</span>
+        </div>
+        <p class="job-co">Red Sea Global (PIF) <span>· Riyadh, Saudi Arabia</span></p>
+        <ul>
+          <li>Single technology point of contact for C-suite and business-unit leaders across one of Saudi Arabia's flagship giga-projects.</li>
+          <li>Manage a demand portfolio of 120+ enterprise initiatives spanning construction, operations, and guest experience — from problem statement to live solution.</li>
+          <li>Translate strategy into vendor-ready scope across 30+ digital initiatives in Digital Twin, drone, IoT, and CRM; deliver 10+ cross-system integrations with strategic vendors.</li>
+          <li>Act as business gate on RFPs and Solution Architecture deliverables (HLD/LLD), validating vendor outputs against TOGAF standards before sign-off.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <p class="sta">[STA·05] <em>Riyadh</em></p>
+        <div class="job-head">
+          <h3 class="job-title">Senior Business Analyst / Product Owner — IoT &amp; M2M</h3>
+          <span class="job-dates">Nov 2022 — Feb 2024</span>
+        </div>
+        <p class="job-co">STC <span>· Riyadh, Saudi Arabia</span></p>
+        <ul>
+          <li>Owned strategy and end-to-end delivery for STC's IoT/M2M and Connected Cars product lines as the single business point of contact.</li>
+          <li>Onboarded 10+ global automotive OEMs — Lucid, GM, VW, BMW, Caterpillar, Chery — onto the Global Connected Cars platform, from concept to commercial launch.</li>
+          <li>Business Analyst SME for the IoT Connectivity Platform serving 1M+ SIMs, contributing to multi-million SAR annual revenue.</li>
+          <li>Led the business side of STC's IoT platform replacement: vendor assessment, UAT ownership, and migration of live services onto the new infrastructure.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <p class="sta">[STA·04] <em>Riyadh</em></p>
+        <div class="job-head">
+          <h3 class="job-title">Business Analyst / Product Owner — IoT &amp; M2M</h3>
+          <span class="job-dates">Sep 2020 — Oct 2022</span>
+        </div>
+        <p class="job-co">STC <span>· Riyadh, Saudi Arabia</span></p>
+        <ul>
+          <li>Drove business analysis for 15+ IoT/M2M initiatives, turning rough concepts into deliverable scope for launches and customer onboarding.</li>
+          <li>Supported the Smart Hajj Fleet Vehicles program — real-time IoT fleet management during one of the world's largest annual logistics operations.</li>
+          <li>Owned UAT across the sprint cadence, calling defect triage and sign-off decisions to keep release timelines tight.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <p class="sta">[STA·03] <em>Riyadh</em></p>
+        <div class="job-head">
+          <h3 class="job-title">Business Systems Analyst / Product Owner — IoT &amp; M2M</h3>
+          <span class="job-dates">Oct 2017 — Sep 2020</span>
+        </div>
+        <p class="job-co">Comarch <span>· deployed on-site at STC, Riyadh</span></p>
+        <ul>
+          <li>Onboarded STC's first enterprise customer onto the M2M platform, setting the operational template for every rollout that followed.</li>
+          <li>Managed 4 platform environments (Dev → Prod) and integrations with CRM, fingerprint, and billing systems.</li>
+          <li>Governed the STC–Comarch delivery relationship across requirements, BRD quality, and 15+ Agile sprints.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <p class="sta">[STA·02] <em>Jeddah</em></p>
+        <div class="job-head">
+          <h3 class="job-title">IT Business Analyst</h3>
+          <span class="job-dates">Feb 2017 — Nov 2017</span>
+        </div>
+        <p class="job-co">KAUST <span>· Jeddah, Saudi Arabia</span></p>
+        <ul>
+          <li>Coordinated requirements between startup founders and 3 strategic vendors in a high-volume innovation pipeline.</li>
+          <li>Delivered 10+ BRDs, 15+ UAT scenarios, and 8+ user guides across 12 mobile and web product releases.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <p class="sta">[STA·01] <em>Jeddah — first uplink</em></p>
+        <div class="job-head">
+          <h3 class="job-title">Software Engineer</h3>
+          <span class="job-dates">Oct 2016 — Jan 2017</span>
+        </div>
+        <p class="job-co">Business Solutions &amp; Applications <span>· Jeddah, Saudi Arabia</span></p>
+        <ul>
+          <li>Modernized an ERP front-end from ASP.NET to HTML5/Bootstrap and built enterprise applications with Java, Spring, and REST APIs.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow reveal">SYS://Capabilities</p>
+    <h2 class="reveal">Core competencies</h2>
+
+    <div class="skill-group reveal">
+      <h3><i>01</i> · Product &amp; Delivery</h3>
+      <div class="chips">
+        <span class="chip">Product Ownership</span><span class="chip">Product Management</span><span class="chip">Digital Transformation</span><span class="chip">Agile / Scrum</span><span class="chip">Roadmapping</span><span class="chip">Backlog Management</span><span class="chip">UAT</span><span class="chip">Release Planning</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><i>02</i> · Business Analysis</h3>
+      <div class="chips">
+        <span class="chip">Requirements Engineering</span><span class="chip">BRDs</span><span class="chip">Business Cases</span><span class="chip">User Journeys</span><span class="chip">Functional &amp; Non-Functional Requirements</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><i>03</i> · Architecture &amp; Integration</h3>
+      <div class="chips">
+        <span class="chip">TOGAF 9.2</span><span class="chip">Enterprise Architecture</span><span class="chip">APIs &amp; Microservices</span><span class="chip">OSS / BSS</span><span class="chip">System Integration</span><span class="chip">HLD / LLD Review</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><i>04</i> · Technical Domain</h3>
+      <div class="chips">
+        <span class="chip">IoT / M2M</span><span class="chip">eSIM</span><span class="chip">Global Connected Cars</span><span class="chip">Telematics</span><span class="chip">OTA Updates</span><span class="chip">Connectivity Platforms</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><i>05</i> · Tools</h3>
+      <div class="chips">
+        <span class="chip">Jira</span><span class="chip">Confluence</span><span class="chip">Visio</span><span class="chip">SoapUI</span><span class="chip">Postman</span><span class="chip">Miro</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal" style="margin-bottom:0;">
+      <h3><i>06</i> · Leadership</h3>
+      <div class="chips">
+        <span class="chip">Vendor &amp; Stakeholder Management</span><span class="chip">RFP / RFI Evaluation</span><span class="chip">Cross-Functional Leadership</span><span class="chip">Governance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials" class="creds">
+  <div class="wrap">
+    <p class="eyebrow reveal">SYS://Credentials</p>
+    <h2 class="reveal">Certifications &amp; education</h2>
+    <div class="cred-grid">
+      <div class="cred hud reveal"><div class="cred-issuer">The Open Group</div><div class="cred-name">TOGAF® 9.2 Certified</div></div>
+      <div class="cred hud reveal"><div class="cred-issuer">Scrum.org</div><div class="cred-name">Professional Scrum Product Owner II (PSPO II)</div></div>
+      <div class="cred hud reveal"><div class="cred-issuer">Scrum.org</div><div class="cred-name">Professional Scrum Product Owner I (PSPO I)</div></div>
+      <div class="cred hud reveal"><div class="cred-issuer">IIBA</div><div class="cred-name">Entry Certificate in Business Analysis (ECBA)</div></div>
+      <div class="cred hud reveal"><div class="cred-issuer">BCS</div><div class="cred-name">Chartered IT Professional (CITP)</div></div>
+      <div class="cred hud reveal"><div class="cred-issuer">SCRUMstudy</div><div class="cred-name">Scrum Fundamentals Certified</div></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu reveal">
+        <div class="edu-deg">MSc, Software Engineering</div>
+        <div class="edu-school">University of Bradford, United Kingdom</div>
+        <div class="edu-year">CLASS OF 2015</div>
+      </div>
+      <div class="edu reveal">
+        <div class="edu-deg">BSc, Software Engineering</div>
+        <div class="edu-school">Applied Science University, Jordan</div>
+        <div class="edu-year">CLASS OF 2013</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <span class="ring r1" aria-hidden="true"></span>
+  <span class="ring r2" aria-hidden="true"></span>
+  <span class="ring r3" aria-hidden="true"></span>
+  <div class="wrap">
+    <p class="eyebrow reveal">SYS://Contact</p>
+    <h2 class="reveal">Establish connection</h2>
+    <p class="reveal">Open to conversations about technology partnership, product, and business analysis leadership roles — or anything IoT and connected mobility.</p>
+    <div class="contact-links reveal">
+      <a class="btn btn-solid" href="mailto:amjadaltakrouri@gmail.com">Email me</a>
+      <a class="btn" href="https://linkedin.com/in/amjadaltakrouri" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="tel:+966561464439">+966 56 146 4439</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="yr">2026</span> AMJAD ALTAKROURI — ALL SIGNALS RECEIVED</span>
+  <a href="#top">Back to uplink ↑</a>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Footer year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ---------- Boot sequence ----------
+  var boot = document.getElementById('boot');
+  var bootText = document.getElementById('bootText');
+  var heroName = document.getElementById('heroName');
+
+  function endBoot(){
+    if(!boot) return;
+    boot.classList.add('done');
+    setTimeout(function(){ if(boot.parentNode) boot.parentNode.removeChild(boot); }, 500);
+    boot = null;
+    if(!reduced){
+      heroName.classList.add('on');
+      setTimeout(function(){ heroName.classList.remove('on'); }, 1100);
+    }
+  }
+
+  if(reduced || sessionStorage.getItem('booted')){
+    endBoot();
+  } else {
+    sessionStorage.setItem('booted','1');
+    var lines = [
+      '> INITIALIZING UPLINK .......... OK',
+      '> eSIM PROFILE: ALTAKROURI, AMJAD',
+      '> CARRIER: STC \u25B8 RED SEA GLOBAL (PIF)',
+      '> AUTH .......... VERIFIED \u2713',
+      '> CONNECTION ESTABLISHED'
+    ];
+    var li = 0, ci = 0, out = '';
+    function type(){
+      if(!boot) return;
+      if(li >= lines.length){ setTimeout(endBoot, 350); return; }
+      var line = lines[li];
+      if(ci < line.length){
+        out += line[ci++];
+        bootText.textContent = out + '\u258C';
+        setTimeout(type, 11);
+      } else {
+        out += '\n'; li++; ci = 0;
+        bootText.textContent = out;
+        setTimeout(type, 130);
+      }
+    }
+    type();
+    boot.addEventListener('click', endBoot);
+    window.addEventListener('keydown', endBoot, {once:true});
+    setTimeout(endBoot, 5000); // hard failsafe
+  }
+
+  // ---------- Typed role ----------
+  var roles = ['TECHNOLOGY BUSINESS PARTNER','PRODUCT OWNER','BUSINESS ANALYST','IoT & CONNECTED CARS LEAD'];
+  var typedEl = document.getElementById('typed');
+  if(!reduced){
+    var r = 0, pos = roles[0].length, deleting = true;
+    setTimeout(function tick(){
+      var word = roles[r];
+      if(deleting){
+        pos--;
+        typedEl.textContent = word.slice(0, pos);
+        if(pos === 0){ deleting = false; r = (r + 1) % roles.length; }
+        setTimeout(tick, 28);
+      } else {
+        word = roles[r];
+        pos++;
+        typedEl.textContent = word.slice(0, pos);
+        if(pos === word.length){ deleting = true; setTimeout(tick, 2200); }
+        else setTimeout(tick, 55);
+      }
+    }, 3200);
+  }
+
+  // ---------- Mobile menu ----------
+  var btn = document.getElementById('menuBtn');
+  var links = document.getElementById('navLinks');
+  btn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  });
+
+  // ---------- Reveal + count-up ----------
+  function countUp(el){
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    if(reduced){ el.textContent = target; return; }
+    var start = null, dur = 1100;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      p = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * p);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var items = document.querySelectorAll('.reveal');
+  if(reduced || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.count').forEach(countUp);
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          en.target.querySelectorAll('.count').forEach(countUp);
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.12});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  // ---------- Interactive connectivity mesh ----------
+  var canvas = document.getElementById('net');
+  var ctx = canvas.getContext('2d');
+  var nodes = [], W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var TEAL = '59,212,190', CORAL = '255,111,97';
+  var mouse = {x:null, y:null};
+
+  function init(){
+    W = canvas.offsetWidth; H = canvas.offsetHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var count = Math.min(90, Math.floor((W * H) / 16000));
+    nodes = [];
+    for(var i = 0; i < count; i++){
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - .5) * .35,
+        vy: (Math.random() - .5) * .35,
+        r: Math.random() * 1.6 + .8,
+        c: Math.random() < .12 ? CORAL : TEAL
+      });
+    }
+  }
+
+  function frame(move){
+    ctx.clearRect(0,0,W,H);
+    var maxD = 130;
+    for(var i = 0; i < nodes.length; i++){
+      var a = nodes[i];
+      if(move){
+        a.x += a.vx; a.y += a.vy;
+        if(a.x < 0 || a.x > W) a.vx *= -1;
+        if(a.y < 0 || a.y > H) a.vy *= -1;
+      }
+      for(var j = i + 1; j < nodes.length; j++){
+        var b = nodes[j];
+        var dx = a.x - b.x, dy = a.y - b.y;
+        var d = Math.sqrt(dx*dx + dy*dy);
+        if(d < maxD){
+          ctx.strokeStyle = 'rgba(' + TEAL + ',' + ((1 - d/maxD) * .22) + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      // The visitor joins the network: link nodes to the cursor
+      if(mouse.x !== null){
+        var mdx = a.x - mouse.x, mdy = a.y - mouse.y;
+        var md = Math.sqrt(mdx*mdx + mdy*mdy);
+        if(md < 170){
+          ctx.strokeStyle = 'rgba(' + TEAL + ',' + ((1 - md/170) * .45) + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+        }
+      }
+      ctx.fillStyle = 'rgba(' + a.c + ',.75)';
+      ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2); ctx.fill();
+    }
+    if(mouse.x !== null){
+      ctx.fillStyle = 'rgba(' + CORAL + ',.9)';
+      ctx.beginPath(); ctx.arc(mouse.x, mouse.y, 2.6, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  function loop(){ frame(true); requestAnimationFrame(loop); }
+
+  init();
+  if(reduced){ frame(false); } else { loop(); }
+
+  var hero = document.querySelector('.hero');
+  hero.addEventListener('pointermove', function(e){
+    if(e.pointerType === 'touch') return;
+    var rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  hero.addEventListener('pointerleave', function(){ mouse.x = null; mouse.y = null; });
+
+  var t;
+  window.addEventListener('resize', function(){
+    clearTimeout(t);
+    t = setTimeout(function(){ init(); if(reduced) frame(false); }, 200);
+  });
+})();
+</script>
+</body>
+</html>
